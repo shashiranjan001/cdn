@@ -8,23 +8,23 @@ Himanshu Pareek &nbsp;15CS30016</br>
 
 - <b>Website owner:</b>
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Can upload content into the CDN easily.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Can upload content into the CDN easily.
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Can make updates to the content.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Can make updates to the content.
 
 - <b>Website Viewer:</b>
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Can visit webpages easily as if no CDN is involved.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Can visit webpages easily as if no CDN is involved.
 
 - <b>System Features :</b> 
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Scalibilty
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Scalibilty
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Fault Tolerance
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Fault Tolerance
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Efficient cache management
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Efficient cache management
 
-``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Rational Load balancing
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Rational Load balancing
 
 
 ### Assumptions : 
@@ -48,7 +48,7 @@ Himanshu Pareek &nbsp;15CS30016</br>
 
 1. Website owner signs up for the CDN service. The content then gets pushed from the orgin server to the gateway node.The origin server also gets hold of the gateway server IP address. So, the gateway server is the point of communication for the origin server for the CDN.
 
-2. ``How does the client(end user) gets served ? </br><p>The client first makes a http request for the page. The DNS record returns ip of the origin server and the request is routed to the origin server. The origin server then returns a http redirection(temporary) as a response. The client then goes to the redirected ip which is the ip of the load balancer. The load balancer then schedules the request to an appropriate replica node based on some scheduling algorithm (round robin, weighted round robin etc.). The replica node then connects with the client and serves the required content.</p>
+2. How does the client(end user) gets served ? </br><p>The client first makes a http request for the page. The DNS record returns ip of the origin server and the request is routed to the origin server. The origin server then returns a http redirection(temporary) as a response. The client then goes to the redirected ip which is the ip of the load balancer. The load balancer then schedules the request to an appropriate replica node based on some scheduling algorithm (round robin, weighted round robin etc.). The replica node then connects with the client and serves the required content.</p>
 
 3. All subsequent client requests are routed directly to the replica server alloted in step2. The replica node continues to serve the client until the cookie given by it to the client expires. In case the cookie expires, client needs to connect to the origin server (this can be detected if the request fetches a "not valid" response from the replica node or a timeout in case of replica fault)
 
