@@ -58,7 +58,7 @@ Himanshu Pareek &nbsp;15CS30016</br>
 5. For critical updates the origin server pushes the update to the gateway server and then it gets broadcasted to concerned replica nodes. This is called a <b>PUSH</b> type update.
 
 
-6. How to handle gateway fault ? </br><p> We will maintain a backup of the gateway server. The backup will periodically ping the gateway server and copy current status. In case it detects a crash it will ping the origin server(it can as it copies status of the gateway server periiodically which contains ip of the origin server) and inform it that it is the new gateway server. It then informs all the replica server that it is the new gateway server.</p>
+6. How to handle gateway fault ? </br><p> We will maintain a backup of the gateway server. The backup will periodically ping the gateway server and copy current status. In case it detects a crash it will ping the origin server(it can as it copies status of the gateway server periodically which contains ip of the origin server) and inform it that it is the new gateway server. It then informs all the replica server that it is the new gateway server.</p>
 
 7. How to handle replica fault ? </br><p>It can be easily detected as the load balacer will periodically ping the replica nodes for liveliness. If it detects a crash it will delete the replica from its *current live replicas priority queue*. The clients who were being served by this replica will get a timeout for their request and then they will initiate a connection with origin server for content similar to step2 which gets to load balancer eventually and it will then route the request to a different replica.</p>
 
